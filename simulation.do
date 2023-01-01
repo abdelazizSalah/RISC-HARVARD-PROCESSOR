@@ -1,4 +1,3 @@
-python inst.py
 vlog ALU.v
 vlog controller.v
 vlog controllerTB.v
@@ -29,5 +28,7 @@ add wave sim:/controllerTB/controller/processor/outPortData
 add wave sim:/controllerTB/controller/processor/outSignalEn
 add wave sim:/controllerTB/controller/processor/memData
 add wave sim:/controllerTB/controller/processor/writeMemData
-
+force -freeze sim:/controllerTB/controller/processor/clk 0 0, 1 {50 ps} -r 100
+add wave -r /controllerTB/controller/processor/instrAfterF2D
+add wave -r /controllerTB/controller/processor/instr
 
